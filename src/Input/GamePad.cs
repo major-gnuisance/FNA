@@ -65,7 +65,7 @@ namespace Microsoft.Xna.Framework.Input
 		{
 			return FNAPlatform.GetGamePadState(
 				(int) playerIndex,
-				GamePadDeadZone.IndependentAxes
+				GamePadDeadZone.Circular // Originally was IndependentAxes. -Major Gnuisance
 			);
 		}
 

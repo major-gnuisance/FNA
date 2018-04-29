@@ -634,7 +634,8 @@ namespace Microsoft.Xna.Framework.Audio
 			{
 				if (INTERNAL_fadeMode == FadeMode.FadeOut)
 				{
-					if (INTERNAL_category.crossfadeType == CrossfadeType.Linear)
+					if (INTERNAL_category.crossfadeType == CrossfadeType.Linear ||
+					    true) // Hack to avoid getting stuck in level transitions in Apotheon -Major Gnuisance
 					{
 						fadePerc = (
 							INTERNAL_fadeEnd -
@@ -657,7 +658,8 @@ namespace Microsoft.Xna.Framework.Audio
 				}
 				else if (INTERNAL_fadeMode == FadeMode.FadeIn)
 				{
-					if (INTERNAL_category.crossfadeType == CrossfadeType.Linear)
+					if (INTERNAL_category.crossfadeType == CrossfadeType.Linear
+					    || true) // Hack to avoid getting stuck in level transitions in Apotheon -Major Gnuisance
 					{
 						fadePerc = INTERNAL_timer.ElapsedMilliseconds / (float) INTERNAL_fadeEnd;
 					}
